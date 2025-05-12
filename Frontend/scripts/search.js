@@ -26,17 +26,24 @@ function updateDisplay(data){
     const items = Array.isArray(data.data) ? data.data : [];
 
     items.forEach(item => {
-        const page = document.createElement("div");
-        const pageTitle = document.createElement("h3");
-        const pageURL = document.createElement("span");
-        const pageDesc = document.createElement("p")
-        pageTitle.textContent = item.title;
-        pageURL.textContent = item.url;
-        pageDesc.textContent = (item.description).substr(0, 100) + "..."
+    const page = document.createElement("div");
+    const pageTitle = document.createElement("h3");
+    const pageURL = document.createElement("span");
+    const pageDesc = document.createElement("p");
+    
+    const link = document.createElement("a");
+    link.href = item.url;
+    link.style.textDecoration = "none";
 
-        page.appendChild(pageTitle);
-        page.appendChild(pageURL);
-        page.appendChild(pageDesc);
-        display.appendChild(page);
-    });
+    pageTitle.textContent = item.title;
+    pageURL.textContent = item.url;
+    pageDesc.textContent = (item.description).substr(0, 100) + "...";
+
+    link.appendChild(pageTitle);
+    link.appendChild(pageURL);
+    link.appendChild(pageDesc);
+    
+    page.appendChild(link);
+    display.appendChild(page);
+});
 }
