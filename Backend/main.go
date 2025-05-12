@@ -55,8 +55,9 @@ func getPages(query string) ([]Page, error) {
     }
     defer db.Close()
 
-	stmt := `SELECT title, description, url FROM pages WHERE title like ? LIMIT 10`
-	rows, err := db.Query(stmt, "%"+query+"%")
+	stmt := `SELECT title, description, url FROM pages WHERE title LIKE ? ORDER BY score DESC LIMIT 10`
+	rows, err := db.Query(stmt, query+"%")
+	
 	if err != nil {
 		return nil, err
 	}
