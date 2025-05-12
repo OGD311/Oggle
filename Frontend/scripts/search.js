@@ -20,6 +20,7 @@ async function search(query) {
 
 function updateDisplay(data){
     const display = document.getElementById('results');
+    display.innerHTML = '';
     console.log(data)
 
     const items = Array.isArray(data.data) ? data.data : [];
