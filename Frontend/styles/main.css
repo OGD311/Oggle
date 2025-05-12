@@ -1,0 +1,32 @@
+html {
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#searchBox {
+
+}
+
+#results {
+
+}
+
+#results > div {
+    
+}
+
+#results > div > a > h3 {
+    margin-bottom: 0;
+}
+
+#results > div > a > h3:hover {
+    text-decoration: underline;
+}
+
+#results > div > a > span {
+    color: gray !important;
+}
